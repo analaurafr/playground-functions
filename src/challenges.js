@@ -1,5 +1,9 @@
 // Desafio 1 - Crie a função compareTrue
 
+function compareTrue(casa, apartamento) {
+  return casa && apartamento;
+}
+
 // Desafio 2 - Crie a função splitSentence
 
 // Desafio 3 - Crie a função concatName
