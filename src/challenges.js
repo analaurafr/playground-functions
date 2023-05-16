@@ -6,6 +6,13 @@ function compareTrue(casa, apartamento) {
 
 // Desafio 2 - Crie a função splitSentence
 
+function splitSentence(sentence) {
+  return sentence.split(' ');
+}
+
+(splitSentence('go Trybe'));
+
+
 // Desafio 3 - Crie a função concatName
 
 // Desafio 4 - Crie a função footballPoints
