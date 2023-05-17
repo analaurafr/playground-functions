@@ -18,6 +18,10 @@ function concatName(array) {
 
 // Desafio 4 - Crie a função footballPoints
 
+function footballPoints(wins, ties) {
+  return (wins * 3) + ties;
+}
+
 // Desafio 5 - Crie a função highestCount
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
