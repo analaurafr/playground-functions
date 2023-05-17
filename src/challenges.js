@@ -24,7 +24,43 @@ function footballPoints(wins, ties) {
 
 // Desafio 5 - Crie a função highestCount
 
+const highestCount = (array) => {
+  let hightestNumber = array[0];
+  let counter = 0;
+
+  for (const number of array) {
+    if (number > hightestNumber) {
+      hightestNumber = number;
+      counter = 1;
+    } else if (number === hightestNumber) {
+      counter += 1;
+    }
+  }
+
+  return counter;
+};
+
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
+
+function calcTriangleArea(base, height) {
+  return (base * height) / 2;
+}
+
+function calcRectangleArea(base, height) {
+  return base * height;
+}
+
+function calcAllAreas(base, height, form) {
+  if (form === 'triângulo') {
+    const triangulo = calcTriangleArea(base, height);
+    return (`O valor da área do triângulo é de: ${triangulo}`);
+  }
+  if (form === 'retângulo') {
+    const retangulo = calcRectangleArea(base, height);
+    return (`O valor da área do retângulo é de: ${retangulo}`);
+  }
+  return ('Não foi possível fazer o cálculo, insira uma forma geométrica válida');
+}
 
 // Desafio 7 - Crie a função catAndMouse
 
