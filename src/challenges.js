@@ -70,90 +70,64 @@ function catAndMouse(mouse, cat1, cat2) {
 
   if (distCat1 < distCat2) {
     return ('cat1');
-  } else if (distCat2 < distCat1) {
+  } if (distCat2 < distCat1) {
     return ('cat2');
-  } else {
-    return ('os gatos trombam e o rato foge');
   }
+  return ('os gatos trombam e o rato foge');
 }
 
 // Desafio 8 - Crie a função fizzBuzz
 
-const fizzBuzz = (array) => {
-  let arrayFizzBuzz = [];
-  for (let index = 0; index < array.length; index += 1) {
-    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
-      arrayFizzBuzz.push('fizzBuzz');
-    } else if (array[index] % 5 === 0) {
-      arrayFizzBuzz.push('buzz');
-    } else if (array[index] % 3 === 0) {
-      arrayFizzBuzz.push('fizz');
-    } else {
-      arrayFizzBuzz.push('bug!');
-    }
-  }
-  return arrayFizzBuzz;
-};
+function fizzBuzz(numbers) {
+  return numbers.map((num) => {
+    if (num % 3 === 0 && num % 5 === 0) return 'fizzBuzz';
+    if (num % 3 === 0) return 'fizz';
+    if (num % 5 === 0) return 'buzz';
+    return 'bug!';
+  });
+}
 
 // Desafio 9 - Crie a função encode e a função decode
 
-function encode(string) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
+function encode(text) {
+  const vowelsToNumbers = {
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5',
+  };
 
-  let encodedString = '';
+  const encodedText = text.replace(/[aeiou]/g, (vowel) => vowelsToNumbers[vowel]);
 
-  for (let i = 0; i < string.length; i++) {
-    const character = string[i].toLowerCase();
-
-    if (vowels.includes(character)) {
-      if (character === 'a') {
-        encodedString += '1';
-      } else if (character === 'e') {
-        encodedString += '2';
-      } else if (character === 'i') {
-        encodedString += '3';
-      } else if (character === 'o') {
-        encodedString += '4';
-      } else if (character === 'u') {
-        encodedString += '5';
-      }
-    } else {
-      encodedString += string[i];
-    }
-  }
-
-  return encodedString;
+  return encodedText;
 }
 
-function decode(string) {
-  const numbers = ['1', '2', '3', '4', '5'];
+function decode(encodedText) {
+  const numbersToVowels = {
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
 
-  let decodedString = '';
+  const decodedText = encodedText.replace(/[1-5]/g, (number) => numbersToVowels[number]);
 
-  for (let i = 0; i < string.length; i++) {
-    const character = string[i];
-
-    if (numbers.includes(character)) {
-      if (character === '1') {
-        decodedString += 'a';
-      } else if (character === '2') {
-        decodedString += 'e';
-      } else if (character === '3') {
-        decodedString += 'i';
-      } else if (character === '4') {
-        decodedString += 'o';
-      } else if (character === '5') {
-        decodedString += 'u';
-      }
-    } else {
-      decodedString += string[i];
-    }
-  }
-
-  return decodedString;
+  return decodedText;
 }
 
 // Desafio 10 - Crie a função techList
+
+function techList(techs, name) {
+  if (!techs || techs.length === 0) {
+    return [];
+  }
+
+  techs.sort();
+
+  return techs.map((tech) => ({ tech, name }));
+}
 
 // Não modifique essas linhas
 module.exports = {
